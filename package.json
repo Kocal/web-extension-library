@@ -5,6 +5,7 @@
   "repository": "https://github.com/Kocal-Web-Extensions/library.git",
   "author": "Hugo Alliaume <kocal@live.fr>",
   "license": "MIT",
+  "main": "dist/index.js",
   "scripts": {
     "prepare": "yarn lint && yarn test && yarn build",
     "release": "standard-version",
