@@ -26,6 +26,16 @@ Usage
 
 ### Browser action
 
+#### `onBadgeClicked(callback: (tab: chrome.tabs.Tab) => void)`
+
+```typescript
+import { onBadgeClicked } from '@kocal/web-extension-library';
+
+onBadgeClicked(tab => {
+  alert(`Badge has been clicked on "${tab.id}".`); 
+})
+```
+
 #### `setBadgeColor(color: string | chrome.browserAction.ColorArray, tabId?: number)`
 
 ```typescript
