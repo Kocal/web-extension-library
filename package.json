@@ -6,6 +6,11 @@
   "author": "Hugo Alliaume <kocal@live.fr>",
   "license": "MIT",
   "main": "dist/index.js",
+  "files": [
+    "src",
+    "!src/**/*.test.ts",
+    "dist"
+  ],
   "scripts": {
     "prepare": "yarn lint && yarn test && yarn build",
     "release": "standard-version",
