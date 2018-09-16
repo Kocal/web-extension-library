@@ -10,6 +10,18 @@
     "build": "tsc",
     "lint": "tslint --project tsconfig.json"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "yarn lint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
   "devDependencies": {
     "husky": "^1.0.0-rc.14",
     "lint-staged": "^8.0.0-beta.1",
