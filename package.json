@@ -24,6 +24,7 @@
     ]
   },
   "devDependencies": {
+    "@types/chrome": "^0.0.73",
     "@types/jest": "^23.3.2",
     "@types/node": "^10.9.4",
     "husky": "^1.0.0-rc.14",
