@@ -24,4 +24,13 @@ $ npm install @kocal/web-extension-library
 Usage
 -----
 
-TODO: Implement this section later...
+### Browser action
+
+#### `setBadgeTitle(title: string, tabId?: number)`
+
+```typescript
+import { setBadgeTitle } from '@kocal/web-extension-library';
+
+setBadgeTitle('My title');
+setBadgeTitle('My title for a specific tab', 123);
+```
