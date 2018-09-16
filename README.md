@@ -26,13 +26,13 @@ Usage
 
 ### Browser action
 
-#### `setBadgeTitle(title: string, tabId?: number)`
+#### `setBadgeColor(color: string | chrome.browserAction.ColorArray, tabId?: number)`
 
 ```typescript
-import { setBadgeTitle } from '@kocal/web-extension-library';
+import { setBadgeColor } from '@kocal/web-extension-library';
 
-setBadgeTitle('My title');
-setBadgeTitle('My title for a specific tab', 123);
+setBadgeColor('red');
+setBadgeColor([255, 0, 0, 255], 123);
 ```
 
 #### `setBadgeText(text: string, tabId?: number)`
@@ -42,4 +42,13 @@ import { setBadgeText } from '@kocal/web-extension-library';
 
 setBadgeText('Text');
 setBadgeText('Text for a specific tab', 123);
+```
+
+#### `setBadgeTitle(title: string, tabId?: number)`
+
+```typescript
+import { setBadgeTitle } from '@kocal/web-extension-library';
+
+setBadgeTitle('My title');
+setBadgeTitle('My title for a specific tab', 123);
 ```
