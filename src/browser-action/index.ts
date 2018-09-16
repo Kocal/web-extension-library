@@ -1,1 +1,1 @@
-export const setActionTitle = (title: string): void => alert({ title });
+export { setActionTitle } from './setActionTitle';
