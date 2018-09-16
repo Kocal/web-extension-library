@@ -17,7 +17,7 @@ Installation
 ------------
 
 ```bash
-$ npm install @kocal/library
+$ npm install @kocal/web-extension-library
 ```
 
 Usage

@@ -1,5 +1,5 @@
 {
-  "name": "@kocal/library",
+  "name": "@kocal/web-extension-library",
   "version": "1.0.0.alpha",
   "description": "A set of functions used for easily write a web extension",
   "repository": "https://github.com/Kocal-Web-Extensions/library.git",
