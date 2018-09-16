@@ -7,10 +7,13 @@
   "license": "MIT",
   "scripts": {
     "release": "standard-version",
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "tslint --project tsconfig.json"
   },
   "devDependencies": {
     "standard-version": "^4.4.0",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.11.0",
     "typescript": "^3.0.3"
   }
 }
