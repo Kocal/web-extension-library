@@ -52,3 +52,13 @@ import { setBadgeTitle } from '@kocal/web-extension-library';
 setBadgeTitle('My title');
 setBadgeTitle('My title for a specific tab', 123);
 ```
+
+#### Agnostic methods
+
+##### `markAsOffline()`
+
+Shortcut to `setBadgeColor('gray'); setBadgeText('OFF');`
+
+##### `markAsOnline()`
+
+Shortcut to `setBadgeColor('green'); setBadgeText('ON');`
