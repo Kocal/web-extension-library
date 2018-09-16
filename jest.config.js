@@ -2,6 +2,9 @@
 // https://jestjs.io/docs/en/configuration.html
 
 module.exports = {
+  setupFiles: [
+    'jest-webextension-mock'
+  ],
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
