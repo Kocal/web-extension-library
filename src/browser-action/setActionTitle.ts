@@ -1,1 +1,1 @@
-export const setActionTitle = (title: string): void => alert({ title });
+export const setActionTitle = (title: string): void => global.console.log({ title });
