@@ -6,9 +6,11 @@
   "author": "Hugo Alliaume <kocal@live.fr>",
   "license": "MIT",
   "scripts": {
-    "release": "standard-version"
+    "release": "standard-version",
+    "build": "tsc"
   },
   "devDependencies": {
-    "standard-version": "^4.4.0"
+    "standard-version": "^4.4.0",
+    "typescript": "^3.0.3"
   }
 }
