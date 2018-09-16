@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "release": "standard-version",
-    "build": "tsc --build tsconfig.build.json",
+    "build": "rimraf dist && tsc --build tsconfig.build.json",
     "lint": "tslint --project tsconfig.json",
     "test": "jest"
   },
@@ -30,6 +30,7 @@
     "jest": "^23.6.0",
     "lint-staged": "^8.0.0-beta.1",
     "prettier": "^1.14.2",
+    "rimraf": "^2.6.2",
     "standard-version": "^4.4.0",
     "ts-jest": "^23.1.4",
     "tslint": "^5.11.0",
