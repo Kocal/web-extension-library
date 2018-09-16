@@ -13,7 +13,7 @@ cache:
     - ~/.cache
 
 before_install:
-  - npm i -g yarn
+  - npm i -g yarn codecov
 
 before_script:
   - yarn
@@ -21,4 +21,4 @@ before_script:
 script:
   - yarn lint
   - yarn build
-  - yarn test
+  - yarn test && codecov
