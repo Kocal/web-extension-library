@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "target": "es2017",
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitReturns": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
+}
