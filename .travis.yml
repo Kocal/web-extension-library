@@ -1,0 +1,24 @@
+sudo: false
+dist: trusty
+
+language: node_js
+node_js:
+  - "node"
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+    - ~/.npm
+    - ~/.cache
+
+before_install:
+  - npm i -g yarn
+
+before_script:
+  - yarn
+
+script:
+  - yarn lint
+  - yarn build
+  - yarn test
