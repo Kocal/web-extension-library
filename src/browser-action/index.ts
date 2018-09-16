@@ -1,1 +1,1 @@
-export { setActionTitle } from './setActionTitle';
+export { setBadgeTitle } from './setBadgeTitle';
