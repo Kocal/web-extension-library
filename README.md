@@ -34,3 +34,12 @@ import { setBadgeTitle } from '@kocal/web-extension-library';
 setBadgeTitle('My title');
 setBadgeTitle('My title for a specific tab', 123);
 ```
+
+#### `setBadgeText(text: string, tabId?: number)`
+
+```typescript
+import { setBadgeText } from '@kocal/web-extension-library';
+
+setBadgeText('Text');
+setBadgeText('Text for a specific tab', 123);
+```
