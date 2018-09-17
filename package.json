@@ -7,19 +7,15 @@
   "license": "MIT",
   "main": "dist/index.js",
   "files": [
-    "src",
-    "!src/**/*.test.ts",
-    "dist",
-    "types/*.d.ts"
+    "dist"
   ],
-  "typings": "types/index.ts",
+  "typings": "dist/types/index.ts",
   "scripts": {
-    "prepare": "yarn lint && yarn test:unit && yarn test:types && yarn build",
+    "prepare": "yarn lint && yarn test:unit && yarn build",
     "release": "standard-version",
     "build": "rimraf dist && tsc --build tsconfig.build.json",
     "lint": "tslint --project tsconfig.json",
-    "test:unit": "jest",
-    "test:types": "tsc --build types/test/tsconfig.json"
+    "test:unit": "jest"
   },
   "husky": {
     "hooks": {
