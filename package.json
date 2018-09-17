@@ -18,8 +18,8 @@
     "release": "standard-version",
     "build": "rimraf dist && tsc --build tsconfig.build.json",
     "lint": "tslint --project tsconfig.json",
-    "test": "jest",
-    "test:types": "tsc -p types/test/tsconfig.json"
+    "test:unit": "jest",
+    "test:types": "tsc --build types/test/tsconfig.json"
   },
   "husky": {
     "hooks": {
