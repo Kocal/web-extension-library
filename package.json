@@ -11,11 +11,11 @@
   ],
   "typings": "dist/types/index.ts",
   "scripts": {
-    "prepare": "yarn lint && yarn test:unit && yarn build",
+    "prepare": "yarn lint && yarn test && yarn build",
     "release": "standard-version",
     "build": "rimraf dist && tsc --build tsconfig.build.json",
     "lint": "tslint --project tsconfig.json",
-    "test:unit": "jest"
+    "test": "jest"
   },
   "husky": {
     "hooks": {
@@ -23,7 +23,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.ts": [
+    "*.ts": [
       "yarn lint --fix",
       "prettier --write",
       "git add"

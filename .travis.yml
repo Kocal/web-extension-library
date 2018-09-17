@@ -21,4 +21,4 @@ before_script:
 script:
   - yarn lint
   - yarn build
-  - yarn test:unit && codecov
+  - yarn test && codecov
