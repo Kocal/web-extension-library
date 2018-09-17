@@ -10,7 +10,7 @@
     "src",
     "!src/**/*.test.ts",
     "dist",
-    "types/*.ts"
+    "types/*.d.ts"
   ],
   "typings": "types/index.ts",
   "scripts": {
