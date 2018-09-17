@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
-    "module": "es2015",
     "moduleResolution": "node",
-    "target": "es2017",
+    "target": "es5",
+    "module": "es2015",
+    "lib": ["es2015", "es2016", "es2017", "dom"],
     "sourceMap": false,
-    "strict": true,
-    "noImplicitReturns": true
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist/lib"
   },
   "include": [
     "src/**/*.ts"
