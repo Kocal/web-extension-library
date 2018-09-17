@@ -5,7 +5,7 @@
   "repository": "https://github.com/Kocal-Web-Extensions/library.git",
   "author": "Hugo Alliaume <kocal@live.fr>",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "dist/lib/index.js",
   "files": [
     "dist"
   ],
