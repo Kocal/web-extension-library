@@ -1,11 +1,8 @@
-declare const WebExtensionLibrary: WebExtensionLibrary;
-export default WebExtensionLibrary;
-
-export interface WebExtensionLibrary {
-  markAsOffline: () => void;
-  markAsOnline: () => void;
-  onBadgeClicked: (callback: (tab: chrome.tabs.Tab) => void) => void;
-  setBadgeColor: (color: string | chrome.browserAction.ColorArray, tabId?: number) => void;
-  setBadgeText: (text: string, tabId?: number) => void;
-  setBadgeTitle: (titles: string, tabId?: number) => void;
+declare module '@kocal/web-extension-library' {
+  const markAsOffline: () => void;
+  const markAsOnline: () => void;
+  const onBadgeClicked: (callback: (tab: chrome.tabs.Tab) => void) => void;
+  const setBadgeColor: (color: string | chrome.browserAction.ColorArray, tabId?: number) => void;
+  const setBadgeText: (text: string, tabId?: number) => void;
+  const setBadgeTitle: (titles: string, tabId?: number) => void;
 }
