@@ -14,7 +14,7 @@
   ],
   "typings": "types/index.ts",
   "scripts": {
-    "prepare": "yarn lint && yarn test && yarn build",
+    "prepare": "yarn lint && yarn test:unit && yarn test:types && yarn build",
     "release": "standard-version",
     "build": "rimraf dist && tsc --build tsconfig.build.json",
     "lint": "tslint --project tsconfig.json",
