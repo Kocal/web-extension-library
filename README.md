@@ -72,3 +72,16 @@ Shortcut to `setBadgeColor('gray'); setBadgeText('OFF');`
 ##### `markAsOnline()`
 
 Shortcut to `setBadgeColor('green'); setBadgeText('ON');`
+
+### Notifications
+
+#### `createNotification(options: NotificationOptions, cb?: callback)`
+#### `createNotification(notificationId: string, options: NotificationOptions, cb?: callback)`
+
+```typescript
+import { createNotification } from '@kocal/web-extension-library';
+
+createNotification({ title: 'My title' });
+createNotification({ title: 'My title' }, notificationId => console.log(notificationId));
+createNotification('my-notification-id', { title: 'My title' }, notificationId => console.log(notificationId));
+```
