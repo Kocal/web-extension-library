@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0-alpha.0"></a>
+# [1.0.0-alpha.0](https://github.com/Kocal-Web-Extensions/library/compare/v1.0.0-alpha...v1.0.0-alpha.0) (2018-09-18)
+
+
+### Features
+
+* **notifications:** implement "createNotification" ([#27](https://github.com/Kocal-Web-Extensions/library/issues/27)) ([a3f6c6c](https://github.com/Kocal-Web-Extensions/library/commit/a3f6c6c))
+* **notifications:** implement "onNotificationClick" ([#30](https://github.com/Kocal-Web-Extensions/library/issues/30)) ([f3e9d9d](https://github.com/Kocal-Web-Extensions/library/commit/f3e9d9d))
+
+
+
 <a name="1.0.0-alpha"></a>
 # 1.0.0-alpha (2018-09-17)
 
