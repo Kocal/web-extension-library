@@ -9,7 +9,7 @@
   "files": [
     "dist"
   ],
-  "typings": "dist/types/index.ts",
+  "typings": "dist/types/index.d.ts",
   "scripts": {
     "prepare": "yarn lint && yarn test && yarn build",
     "release": "standard-version",
