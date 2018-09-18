@@ -26,12 +26,12 @@ Usage
 
 ### Browser action
 
-#### `onBadgeClicked(callback: (tab: chrome.tabs.Tab) => void)`
+#### `onBadgeClick(callback: (tab: chrome.tabs.Tab) => void)`
 
 ```typescript
-import { onBadgeClicked } from '@kocal/web-extension-library';
+import { onBadgeClick } from '@kocal/web-extension-library';
 
-onBadgeClicked(tab => {
+onBadgeClick(tab => {
   alert(`Badge has been clicked on "${tab.id}".`); 
 })
 ```
