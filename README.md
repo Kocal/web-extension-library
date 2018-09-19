@@ -108,3 +108,13 @@ createTab({ url: 'https://google.com' }, (tab) => {
   // ...
 });
 ```
+
+### Twitch
+
+#### `registerApiKeys(apiKeys: string[])`
+
+```typescript
+import { registerApiKeys } from '@kocal/web-extension-library';
+
+registerApiKeys(['...', '...']);
+```
