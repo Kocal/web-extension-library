@@ -118,3 +118,11 @@ import { registerApiKeys } from '@kocal/web-extension-library';
 
 registerApiKeys(['...', '...']);
 ```
+
+#### `pickTwitchApiKey()`
+
+```typescript
+import { pickTwitchApiKey } from '@kocal/web-extension-library';
+
+pickTwitchApiKey();
+```
