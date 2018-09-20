@@ -126,3 +126,23 @@ import { pickTwitchApiKey } from '@kocal/web-extension-library';
 
 pickTwitchApiKey();
 ```
+
+#### `getTwitchGame(gameId: string)`
+
+```typescript
+import { getTwitchGame } from '@kocal/web-extension-library';
+
+getTwitchGame('21779')
+  // If everything is fine
+  .then((game) => {
+    // {
+    //   id: '21779',
+    //   name: 'League of Legends',
+    //   box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends-{width}x{height}.jpg',
+    // }
+  })
+  // If game does not exist
+  .catch(err => {
+    // 'Twitch Game "21779" does not exist.'
+  });
+```
