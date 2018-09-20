@@ -5,7 +5,7 @@ describe('pickTwitchApiKey', () => {
   it('it should works', () => {
     apiKeys.push('a', 'b', 'c');
 
-    const randomlyPickedApiKeys = Array.from(Array(10).keys()).map(() => pickTwitchApiKey());
+    const randomlyPickedApiKeys = Array.from(Array(20).keys()).map(() => pickTwitchApiKey());
     expect(randomlyPickedApiKeys).toContain('a');
     expect(randomlyPickedApiKeys).toContain('b');
     expect(randomlyPickedApiKeys).toContain('c');
