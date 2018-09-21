@@ -7,23 +7,10 @@ Library
 
 > A set of functions used to easily write a web extension
 
-Requirements
-------------
-
-- Node.js
-- NPM or Yarn
-- TypeScript
-
-Installation
-------------
-
-```bash
-$ npm install @kocal/web-extension-library
-```
+[Documentation](https://kocal-web-extensions.github.io/library/).
 
 Usage
 -----
-
 
 ### Notifications
 

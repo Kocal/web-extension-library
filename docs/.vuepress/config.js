@@ -9,19 +9,24 @@ module.exports = {
     docsDir: 'docs',
     sidebar: [
       {
+        children: [
+          'getting-started',
+        ],
+      },
+      {
         title: 'Browser features',
         collapsable: false,
         children: [
-          'browser-action',
-          'notifications',
-          'tabs',
+          '/browser-features/browser-action',
+          '/browser-features/notifications',
+          '/browser-features/tabs',
         ],
       },
       {
         title: 'Other',
         collapsable: false,
         children: [
-          'twitch',
+          'other/twitch',
         ],
       },
     ],
