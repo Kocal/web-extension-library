@@ -5,7 +5,7 @@ Library
 [![Build Status](https://travis-ci.com/Kocal-Web-Extensions/library.svg?branch=master)](https://travis-ci.com/Kocal-Web-Extensions/library)
 [![codecov](https://codecov.io/gh/Kocal-Web-Extensions/library/branch/master/graph/badge.svg)](https://codecov.io/gh/Kocal-Web-Extensions/library)
 
-> A set of functions used for easily write a web extension
+> A set of functions used to easily write a web extension
 
 Requirements
 ------------

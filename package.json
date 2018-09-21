@@ -15,7 +15,9 @@
     "release": "standard-version",
     "build": "rimraf dist && tsc --build tsconfig.build.json",
     "lint": "tslint --project tsconfig.json",
-    "test": "jest"
+    "test": "jest",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "husky": {
     "hooks": {
