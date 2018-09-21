@@ -33,6 +33,7 @@
     "@types/chrome": "^0.0.73",
     "@types/jest": "^23.3.2",
     "@types/node": "^10.9.4",
+    "@types/qs": "^6.5.1",
     "husky": "^1.0.0-rc.14",
     "jest": "^23.6.0",
     "jest-webextension-mock": "^3.4.0",
@@ -47,6 +48,7 @@
     "typescript": "^3.0.3"
   },
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "qs": "^6.5.2"
   }
 }
