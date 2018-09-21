@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "axios-mock-adapter": "^1.15.0",
     "qs": "^6.5.2"
   }
 }

@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { pickTwitchApiKey } from '.';
 
-interface Game {
+export interface Game {
   id: string;
   name: string;
   box_art_url: string;
