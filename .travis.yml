@@ -22,7 +22,8 @@ script:
   - yarn lint
   - yarn build
   - yarn test -i && codecov
-  - yarn docs:build
+
+before_deploy: yarn docs:build
 
 deploy:
   provider: pages
