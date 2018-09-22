@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0-alpha.3"></a>
+# [1.0.0-alpha.3](https://github.com/Kocal-Web-Extensions/library/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2018-09-22)
+
+
+### Features
+
+* **twitch:** implement "getTwitchGame" ([#36](https://github.com/Kocal-Web-Extensions/library/issues/36)) ([2ac569b](https://github.com/Kocal-Web-Extensions/library/commit/2ac569b))
+* **twitch:** implement "getTwitchLiveStreams" ([#37](https://github.com/Kocal-Web-Extensions/library/issues/37)) ([76d384e](https://github.com/Kocal-Web-Extensions/library/commit/76d384e))
+* **twitch:** implement "pickTwichApiKey" ([#35](https://github.com/Kocal-Web-Extensions/library/issues/35)) ([5d284bb](https://github.com/Kocal-Web-Extensions/library/commit/5d284bb))
+* **twitch:** implement "registerTwitchApiKeys" ([#34](https://github.com/Kocal-Web-Extensions/library/issues/34)) ([f4c0417](https://github.com/Kocal-Web-Extensions/library/commit/f4c0417))
+* use Vuepress for documentation ([#38](https://github.com/Kocal-Web-Extensions/library/issues/38)) ([aa4891a](https://github.com/Kocal-Web-Extensions/library/commit/aa4891a))
+
+
+
 <a name="1.0.0-alpha.2"></a>
 # [1.0.0-alpha.2](https://github.com/Kocal-Web-Extensions/library/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2018-09-19)
 
