@@ -2,7 +2,7 @@
 home: true
 footer: MIT Licensed | Copyright © 2018-present Hugo Alliaume
 actionText: Get Started →
-actionLink: /requirements
+actionLink: /getting-started
 features:
   - title: Small functions
     details: No big classes to import, only small well-documented functions.
