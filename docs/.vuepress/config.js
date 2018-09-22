@@ -6,6 +6,11 @@ module.exports = {
   themeConfig: {
     repo: 'Kocal-Web-Extensions/library',
     docsDir: 'docs',
+    editLinks: true,
+    lastConfig: 'Last updated',
+    serviceWorker: {
+      updatePopup: true,
+    },
     sidebar: [
       {
         collapsable: false,
