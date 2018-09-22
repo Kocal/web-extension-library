@@ -7,4 +7,4 @@ Library
 
 > A set of functions used to easily write a web extension
 
-[Documentation](https://kocal-web-extensions.github.io/library/).
+Read the [Documentation](https://web-extension-library.netlify.com/).
