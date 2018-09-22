@@ -1,11 +1,11 @@
-import { setBadgeTitle } from '.';
+import { setBrowserActionTitle } from '.';
 
-describe('setBadgeTitle', () => {
+describe('setBrowserActionTitle', () => {
   it('should works', () => {
-    setBadgeTitle('foo');
+    setBrowserActionTitle('foo');
     expect(chrome.browserAction.setTitle).toHaveBeenCalledWith({ title: 'foo' });
 
-    setBadgeTitle('bar', 1);
+    setBrowserActionTitle('bar', 1);
     expect(chrome.browserAction.setTitle).toHaveBeenCalledWith({ title: 'bar', tabId: 1 });
   });
 });

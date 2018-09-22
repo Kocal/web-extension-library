@@ -1,8 +1,8 @@
-import { onBadgeClick } from '.';
+import { onBrowserActionClick } from '.';
 
-describe('onBadgeClick', () => {
+describe('onBrowserActionClick', () => {
   it('should works', () => {
-    onBadgeClick((tab: chrome.tabs.Tab) => {
+    onBrowserActionClick((tab: chrome.tabs.Tab) => {
       tab.id;
     });
     expect(chrome.browserAction.onClicked.addListener).toHaveBeenCalledWith(expect.any(Function));
