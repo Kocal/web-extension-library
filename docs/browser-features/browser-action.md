@@ -26,10 +26,10 @@ Methods related to [`chrome.browserAction`](https://developer.chrome.com/extensi
 Set the title of the browser action. This shows up in the tooltip.
 
 ```typescript
-import { setBadgeTitle } from '@kocal/web-extension-library';
+import { setBrowserActionTitle } from '@kocal/web-extension-library';
 
-setBadgeTitle('My title');
-setBadgeTitle('My other title', 123); // only for tab "123"
+setBrowserActionTitle('My title');
+setBrowserActionTitle('My other title', 123); // only for tab "123"
 ```
 
 ### Listen for a click
@@ -41,13 +41,13 @@ This event will not fire if the browser action has a [popup](https://developer.c
 :::
 
 ```typescript
-import { onBadgeClick } from '@kocal/web-extension-library';
+import { onBrowserActionClick } from '@kocal/web-extension-library';
 
-onBadgeClick(() => {
+onBrowserActionClick(() => {
   
 })
 
-onBadgeClick(tab => {
+onBrowserActionClick(tab => {
   // ...
 })
 ```

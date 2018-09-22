@@ -25,10 +25,10 @@ All functions can/should be imported from '@kocal/web-extension-library';
 
 ```typescript
 import {
-  onBadgeClick,
+  onBrowserActionClick,
   setBadgeColor,
   setBadgeText,
-  setBadgeTitle,
+  setBrowserActionTitle,
   ...
 } from '@kocal/web-extension-library'
 ```

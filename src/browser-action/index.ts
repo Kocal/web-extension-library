@@ -1,6 +1,6 @@
 export { markAsOffline } from './markAsOffline';
 export { markAsOnline } from './markAsOnline';
-export { onBadgeClick } from './onBadgeClick';
+export { onBrowserActionClick } from './onBrowserActionClick';
 export { setBadgeColor } from './setBadgeColor';
 export { setBadgeText } from './setBadgeText';
-export { setBadgeTitle } from './setBadgeTitle';
+export { setBrowserActionTitle } from './setBrowserActionTitle';
