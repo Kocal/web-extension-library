@@ -12,19 +12,6 @@ Library
 Usage
 -----
 
-### Tabs
-
-#### `createTab(createProperties: CreateProperties, cb?: (tab: Tab) => void)`
-
-```typescript
-import { createTab } from '@kocal/web-extension-library';
-
-createTab({ url: 'https://google.com' });
-createTab({ url: 'https://google.com' }, (tab) => {
-  // ...
-});
-```
-
 ### Twitch
 
 #### `registerApiKeys(apiKeys: string[])`
