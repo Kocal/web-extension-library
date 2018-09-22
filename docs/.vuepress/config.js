@@ -5,10 +5,10 @@ module.exports = {
   serviceWorker: true,
   themeConfig: {
     repo: 'Kocal-Web-Extensions/library',
-    editLinks: true,
     docsDir: 'docs',
     sidebar: [
       {
+        collapsable: false,
         children: [
           'getting-started',
         ],
@@ -17,9 +17,9 @@ module.exports = {
         title: 'Browser features',
         collapsable: false,
         children: [
-          '/browser-features/browser-action',
-          '/browser-features/notifications',
-          '/browser-features/tabs',
+          'browser-features/browser-action',
+          'browser-features/notifications',
+          'browser-features/tabs',
         ],
       },
       {
