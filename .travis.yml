@@ -15,9 +15,6 @@ cache:
 before_install:
   - npm i -g yarn codecov
 
-before_script:
-  - yarn
-
 script:
   - yarn lint
   - yarn build
