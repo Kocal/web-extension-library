@@ -12,29 +12,6 @@ Library
 Usage
 -----
 
-### Notifications
-
-#### `createNotification(options: NotificationOptions, cb?: callback)`
-#### `createNotification(notificationId: string, options: NotificationOptions, cb?: callback)`
-
-```typescript
-import { createNotification } from '@kocal/web-extension-library';
-
-createNotification({ title: 'My title' });
-createNotification({ title: 'My title' }, notificationId => console.log(notificationId));
-createNotification('my-notification-id', { title: 'My title' }, notificationId => console.log(notificationId));
-```
-
-#### `onNotificationClick(callback: (notificationId: string) => void)`
-
-```typescript
-import { onNotificationClick } from '@kocal/web-extension-library';
-
-onNotificationClick((notificationId) => {
-  console.log(notificationId);
-});
-```
-
 ### Tabs
 
 #### `createTab(createProperties: CreateProperties, cb?: (tab: Tab) => void)`
