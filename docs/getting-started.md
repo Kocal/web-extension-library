@@ -21,7 +21,7 @@ $ npm install @kocal/web-extension-library
 
 ## Usage
 
-All functions can/should be imported from '@kocal/web-extension-library';
+All functions can/should be imported from `@kocal/web-extension-library`:
 
 ```typescript
 import {
@@ -30,5 +30,5 @@ import {
   setBadgeText,
   setBrowserActionTitle,
   ...
-} from '@kocal/web-extension-library'
+} from '@kocal/web-extension-library';
 ```
