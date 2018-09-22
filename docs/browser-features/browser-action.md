@@ -4,6 +4,19 @@ sidebarDepth: 2
 
 # Browser action & Badge
 
+:::tip
+Ensure you have properly configured your browser action through `manifest.json`:
+
+```json
+{
+  "browser_action": {
+    "default_title": "Your extension name",
+    "default_icon": "icons/icon_48.png"
+  }
+}
+```
+:::
+
 ## Browser action
 
 Methods related to [`chrome.browserAction`](https://developer.chrome.com/extensions/browserAction) API.
