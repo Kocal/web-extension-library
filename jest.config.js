@@ -10,11 +10,6 @@ module.exports = {
   },
   testMatch: ['**/?(*.)+(spec|test).ts'],
   moduleFileExtensions: ['ts', 'js'],
-  globals: {
-    'ts-jest': {
-      tsConfigFile: 'tsconfig.test.json',
-    },
-  },
   collectCoverage: !!process.env.CI,
   coverageDirectory: 'coverage',
 };
