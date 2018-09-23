@@ -13,6 +13,8 @@ describe('storage', () => {
     expect(data).toEqual({ foo: 'bar' });
     expect(spyRead).toHaveBeenLastCalledWith('my-key');
     expect(spyRead).toHaveLastReturnedWith('{"data":{"foo":"bar"}}');
+
+    expect(readFromStorage('i-do-not-exist')).toBeNull();
   });
 
   describe('with ttl', () => {

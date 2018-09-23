@@ -17,7 +17,7 @@ export const writeToStorage = (key: string, data: any, ttlInSeconds = 0) => {
 
 export const readFromStorage = (key: string): any | null => {
   const payload: Payload = JSON.parse(localStorage.getItem(key) || 'null');
-  const isExpired = payload.hasOwnProperty('timestamp') && payload.timestamp < timestamp();
+  const isExpired = payload && payload.hasOwnProperty('timestamp') && payload.timestamp < timestamp();
 
-  return payload.data === null || isExpired ? null : payload.data;
+  return payload === null || payload.data === null || isExpired ? null : payload.data;
 };
