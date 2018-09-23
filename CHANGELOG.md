@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0-alpha.4"></a>
+# [1.0.0-alpha.4](https://github.com/Kocal-Web-Extensions/library/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2018-09-23)
+
+
+### Bug Fixes
+
+* **typescript:** build to "commonjs" format ([#46](https://github.com/Kocal-Web-Extensions/library/issues/46)) ([0878b06](https://github.com/Kocal-Web-Extensions/library/commit/0878b06))
+
+
+
 <a name="1.0.0-alpha.3"></a>
 # [1.0.0-alpha.3](https://github.com/Kocal-Web-Extensions/library/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2018-09-22)
 
