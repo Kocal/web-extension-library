@@ -24,6 +24,7 @@ module.exports = {
           'browser-features/browser-action',
           'browser-features/notifications',
           'browser-features/tabs',
+          'browser-features/storage',
         ],
       },
       {
