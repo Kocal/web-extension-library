@@ -8,7 +8,8 @@
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "declarationDir": "dist/types",
-    "outDir": "dist/lib"
+    "outDir": "dist/lib",
+    "typeRoots": ["node_modules/@types", "node_modules/web-ext-types"]
   },
   "include": [
     "src/**/*.ts"
