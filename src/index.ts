@@ -5,3 +5,4 @@ export * from './notifications';
 export * from './tabs';
 export * from './twitch';
 export * from './storage';
+export * from './sync-storage';
