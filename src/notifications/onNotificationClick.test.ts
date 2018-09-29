@@ -5,6 +5,6 @@ describe('onNotificationClick', () => {
     const cb = jest.fn();
 
     onNotificationClick(cb);
-    expect(chrome.notifications.onClicked.addListener).toHaveBeenLastCalledWith(cb);
+    expect(browser.notifications.onClicked.addListener).toHaveBeenLastCalledWith(cb);
   });
 });

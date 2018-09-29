@@ -1,2 +1,4 @@
-export const onBrowserActionClick = (callback: (tab: chrome.tabs.Tab) => void): void =>
-  chrome.browserAction.onClicked.addListener(callback);
+import Tab = browser.tabs.Tab;
+
+export const onBrowserActionClick = (callback: (tab: Tab) => void): void =>
+  browser.browserAction.onClicked.addListener(callback);

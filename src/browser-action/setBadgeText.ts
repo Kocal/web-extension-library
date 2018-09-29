@@ -1,1 +1,1 @@
-export const setBadgeText = (text: string, tabId?: number): void => chrome.browserAction.setBadgeText({ text, tabId });
+export const setBadgeText = (text: string, tabId?: number): void => browser.browserAction.setBadgeText({ text, tabId });

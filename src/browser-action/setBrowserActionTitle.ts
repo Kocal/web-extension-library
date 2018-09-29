@@ -1,2 +1,2 @@
 export const setBrowserActionTitle = (title: string, tabId?: number): void =>
-  chrome.browserAction.setTitle({ title, tabId });
+  browser.browserAction.setTitle({ title, tabId });

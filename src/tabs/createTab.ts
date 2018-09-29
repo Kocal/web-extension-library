@@ -1,5 +1,4 @@
-import CreateProperties = chrome.tabs.CreateProperties;
-import Tab = chrome.tabs.Tab;
+import CreateProperties = browser.tabs.CreateProperties;
+import Tab = browser.tabs.Tab;
 
-export const createTab = (createProperties: CreateProperties, cb?: (tab: Tab) => void): void =>
-  chrome.tabs.create(createProperties, cb);
+export const createTab = (createProperties: CreateProperties): Promise<Tab> => browser.tabs.create(createProperties);
