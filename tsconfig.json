@@ -9,9 +9,10 @@
     "declaration": true,
     "declarationDir": "dist/types",
     "outDir": "dist/lib",
-    "typeRoots": ["node_modules/@types", "node_modules/web-ext-types"]
+    "typeRoots": ["node_modules/@types", "node_modules/web-ext-types", "./types"]
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "types/overrides.d.ts"
   ]
 }

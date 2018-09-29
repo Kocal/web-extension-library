@@ -1,22 +1,18 @@
 /* tslint:disable: function-name */
 
-import NotificationOptions = chrome.notifications.NotificationOptions;
+import NotificationOptions = browser.notifications.NotificationOptions;
 
-type callback = (notificationId: string) => void;
-
-function _createNotification(notificationId: string, options: NotificationOptions, cb?: callback): void;
-function _createNotification(options: NotificationOptions, cb?: callback): void;
+function _createNotification(notificationId: string, options: NotificationOptions): Promise<String>;
+function _createNotification(options: NotificationOptions): Promise<String>;
 function _createNotification(
-  notificationIdOrOptions: string | NotificationOptions,
-  optionsOrCb: NotificationOptions | callback,
-  cb?: (notificationId: string) => void
-): void {
-  if (typeof notificationIdOrOptions === 'string') {
-    chrome.notifications.create(notificationIdOrOptions, optionsOrCb as NotificationOptions, cb);
-    return;
+  notificationId: string | NotificationOptions,
+  options?: NotificationOptions
+): Promise<String> {
+  if (typeof notificationId === 'string') {
+    return browser.notifications.create(notificationId, options as NotificationOptions);
   }
 
-  chrome.notifications.create(notificationIdOrOptions as NotificationOptions, optionsOrCb as callback);
+  return browser.notifications.create(notificationId as NotificationOptions);
 }
 
 export const createNotification = _createNotification;

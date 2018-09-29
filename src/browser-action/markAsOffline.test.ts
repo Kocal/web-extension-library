@@ -1,9 +1,9 @@
 import { markAsOffline } from '.';
 
-describe('markeAsOffline', () => {
+describe('markAsOffline', () => {
   it('should works', () => {
     markAsOffline();
-    expect(chrome.browserAction.setBadgeBackgroundColor).toHaveBeenCalledWith({ color: 'gray' });
-    expect(chrome.browserAction.setBadgeText).toHaveBeenCalledWith({ text: 'OFF' });
+    expect(browser.browserAction.setBadgeBackgroundColor).toHaveBeenCalledWith({ color: 'gray' });
+    expect(browser.browserAction.setBadgeText).toHaveBeenCalledWith({ text: 'OFF' });
   });
 });

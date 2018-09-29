@@ -1,14 +1,13 @@
 import { createTab } from '.';
 
 describe('createTab', () => {
-  it('should works', () => {
+  it('should works', done => {
     const createProperties = { url: 'https://google.com' };
-    createTab(createProperties);
-    expect(chrome.tabs.create).toHaveBeenLastCalledWith(createProperties, undefined);
 
-    const cb = jest.fn();
-    createTab(createProperties, cb);
-    expect(chrome.tabs.create).toHaveBeenLastCalledWith(createProperties, cb);
-    expect(cb).toHaveBeenCalled();
+    createTab(createProperties).then(() => {
+      expect(browser.tabs.create).toHaveBeenLastCalledWith(createProperties);
+
+      done();
+    });
   });
 });

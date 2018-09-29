@@ -1,2 +1,1 @@
-export const onNotificationClick = (callback: (notificationId: string) => void): void =>
-  chrome.notifications.onClicked.addListener(callback);
+export const onNotificationClick = browser.notifications.onClicked.addListener;
