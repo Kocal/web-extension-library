@@ -29,4 +29,15 @@ describe('sync storage', () => {
       });
     });
   });
+
+  test('errors', done => {
+    writeToSyncStorage(1 as any).then(items => {
+      expect(items).toBeUndefined();
+
+      readFromSyncStorage(1 as any).catch(err => {
+        expect(err).toEqual(new Error('Wrong key given'));
+        done();
+      });
+    });
+  });
 });
