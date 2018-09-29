@@ -25,6 +25,7 @@ module.exports = {
           'browser-features/notifications',
           'browser-features/tabs',
           'browser-features/storage',
+          'browser-features/sync-storage',
         ],
       },
       {
