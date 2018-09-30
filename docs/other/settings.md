@@ -22,7 +22,7 @@ export interface InterfaceSettings {
 }
 
 export interface InterfaceSettingsItem {
-  type: 'boolean'; // for it only supports boolean
+  type: 'boolean'; // for now, it only supports boolean
   label: string;
   help?: string;
   defaultValue?: any;
