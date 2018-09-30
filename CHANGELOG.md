@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0-alpha.5"></a>
+# [1.0.0-alpha.5](https://github.com/Kocal-Web-Extensions/library/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2018-09-30)
+
+
+### Features
+
+* add sync storage ([#52](https://github.com/Kocal-Web-Extensions/library/issues/52)) ([024fcde](https://github.com/Kocal-Web-Extensions/library/commit/024fcde))
+* implement "settings" ([#53](https://github.com/Kocal-Web-Extensions/library/issues/53)) ([3950e20](https://github.com/Kocal-Web-Extensions/library/commit/3950e20))
+* implement "storage" ([#47](https://github.com/Kocal-Web-Extensions/library/issues/47)) ([9ab155d](https://github.com/Kocal-Web-Extensions/library/commit/9ab155d))
+* use Mozilla's  web-extension polyfill ([#51](https://github.com/Kocal-Web-Extensions/library/issues/51)) ([95e5a7f](https://github.com/Kocal-Web-Extensions/library/commit/95e5a7f)), closes [#50](https://github.com/Kocal-Web-Extensions/library/issues/50)
+
+
+
 <a name="1.0.0-alpha.4"></a>
 # [1.0.0-alpha.4](https://github.com/Kocal-Web-Extensions/library/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2018-09-23)
 
