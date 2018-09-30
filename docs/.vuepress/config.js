@@ -32,6 +32,7 @@ module.exports = {
         title: 'Other',
         collapsable: false,
         children: [
+          'other/settings',
           'other/twitch',
         ],
       },
