@@ -7,4 +7,4 @@ Library
 
 > A set of functions used to easily write a web extension
 
-Read the [Documentation](https://web-extension-library.netlify.com/).
+Read the [Documentation](https://web-extension-library.com).
