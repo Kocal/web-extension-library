@@ -27,23 +27,18 @@ export const getTwitchLiveStreams = (usersId: number[]): Promise<Payload> => {
     headers: { 'Client-ID': pickTwitchApiKey() },
   };
 
-  return new Promise<Payload>(resolve => {
-    return axios
-      .get(url, config)
-      .then(response => response.data)
-      .then(({ data }: { data: Stream[] }) => {
-        const onlineStreams = data.filter(stream => usersId.includes(Number(stream.user_id)));
-        const offlineStreams = usersId.filter(userId => data.every(stream => Number(stream.user_id) !== userId));
+  return new Promise<Payload>(async resolve => {
+    const response = await axios.get(url, config);
+    const streams: Stream[] = response.data.data;
 
-        const promises = onlineStreams.map(stream => {
-          return getTwitchGame(stream.game_id).then(game => {
-            stream.game = game;
-          });
-        });
+    const onlineStreams = streams.filter(stream => usersId.includes(Number(stream.user_id)));
+    const offlineStreams = usersId.filter(userId => streams.every(stream => Number(stream.user_id) !== userId));
 
-        Promise.all(promises).then(() => {
-          resolve({ onlineStreams, offlineStreams });
-        });
-      });
+    const promises = onlineStreams.map(async stream => {
+      stream.game = await getTwitchGame(stream.game_id);
+    });
+
+    await Promise.all(promises);
+    resolve({ onlineStreams, offlineStreams });
   });
 };
