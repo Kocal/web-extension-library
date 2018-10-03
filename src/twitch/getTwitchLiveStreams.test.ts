@@ -18,31 +18,31 @@ axiosMock
   .passThrough();
 
 describe('getTwitchLiveStreams', () => {
-  it('Solary should be online, Solary Fortnite should be offline', done => {
-    getTwitchLiveStreams([solaryUserId, solaryFortniteUserId]).then(({ onlineStreams, offlineStreams }) => {
-      expect(offlineStreams).toEqual([198506129]);
-      expect(onlineStreams).toEqual([
-        {
-          id: '30435956192',
-          user_id: '174955366',
-          game_id: '21779',
-          community_ids: [],
-          type: 'live',
-          title: 'TIOO NUCLEAR SMURFING',
-          viewer_count: 2169,
-          started_at: '2018-09-20T07:01:47Z',
-          language: 'fr',
-          thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_solary-{width}x{height}.jpg',
-          // 'game' is automatically fetched :)
-          game: {
-            id: '21779',
-            name: 'League of Legends',
-            box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends-{width}x{height}.jpg',
-          },
-        },
-      ]);
+  it('Solary should be online, Solary Fortnite should be offline', async done => {
+    const { onlineStreams, offlineStreams } = await getTwitchLiveStreams([solaryUserId, solaryFortniteUserId]);
 
-      done();
-    });
+    expect(offlineStreams).toEqual([198506129]);
+    expect(onlineStreams).toEqual([
+      {
+        id: '30435956192',
+        user_id: '174955366',
+        game_id: '21779',
+        community_ids: [],
+        type: 'live',
+        title: 'TIOO NUCLEAR SMURFING',
+        viewer_count: 2169,
+        started_at: '2018-09-20T07:01:47Z',
+        language: 'fr',
+        thumbnail_url: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_solary-{width}x{height}.jpg',
+        // 'game' is automatically fetched :)
+        game: {
+          id: '21779',
+          name: 'League of Legends',
+          box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends-{width}x{height}.jpg',
+        },
+      },
+    ]);
+
+    done();
   });
 });

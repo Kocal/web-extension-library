@@ -18,16 +18,15 @@ export interface InterfaceSettingsItem {
 
 export const getSettings = (): InterfaceSettings => _settings;
 
-export const loadSettings = (): Promise<void> => {
-  return readFromSyncStorage('settings').then(items => {
-    const settings: InterfaceSettings | undefined = items.settings;
+export const loadSettings = async (): Promise<void> => {
+  const items = await readFromSyncStorage('settings');
+  const settings: InterfaceSettings | undefined = items.settings;
 
-    Object.entries(settings || getFlattenSettings()).forEach(([dottedName, value]) => {
-      setSettingValue(dottedName, value, false);
-    });
-
-    return writeToSyncStorage({ settings: getFlattenSettings() });
+  Object.entries(settings || getFlattenSettings()).forEach(([dottedName, value]) => {
+    setSettingValue(dottedName, value, false);
   });
+
+  return writeToSyncStorage({ settings: getFlattenSettings() });
 };
 
 /**
@@ -47,7 +46,7 @@ export const getSettingValue = (key: string): any | undefined => {
   return setting.value;
 };
 
-export const setSettingValue = (key: string, value: any, synchronize = true): Promise<void> => {
+export const setSettingValue = async (key: string, value: any, synchronize = true): Promise<void> => {
   const setting = getSetting(key);
   const previousValue = getSettingValue(key);
 
@@ -59,14 +58,13 @@ export const setSettingValue = (key: string, value: any, synchronize = true): Pr
     return Promise.resolve();
   }
 
-  return writeToSyncStorage({ settings: getFlattenSettings() })
-    .then(() => Promise.resolve())
-    .catch(
-      /* istanbul ignore next */ () => {
-        Object.assign(setting, { value: previousValue });
-        Promise.reject();
-      }
-    );
+  try {
+    await writeToSyncStorage({ settings: getFlattenSettings() });
+    Promise.resolve();
+  } /* istanbul ignore next */ catch (e) {
+    Object.assign(setting, { value: previousValue });
+    Promise.reject();
+  }
 };
 
 function getSetting(key: string): InterfaceSettingsItem | undefined {

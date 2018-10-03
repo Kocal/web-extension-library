@@ -1,43 +1,42 @@
 import { readFromSyncStorage, writeToSyncStorage } from '.';
 
 describe('sync storage', () => {
-  test('it should work', done => {
+  test('it should work', async done => {
     // 1st, fetch 'fruits' item
-    readFromSyncStorage('fruits').then(items => {
-      expect(items).toEqual({
-        fruits: undefined,
-      });
-
-      // 2nd, store 'fruits' and 'vegetables'
-      writeToSyncStorage({ fruits: ['apple', 'banana'], vegetables: ['carrot'] }).then(() => {
-        // 3rd, then we refetch 'fruits'
-        readFromSyncStorage('fruits').then(items => {
-          expect(items).toEqual({
-            fruits: ['apple', 'banana'],
-          });
-
-          // 4th, read everything from storage
-          readFromSyncStorage().then(items => {
-            expect(items).toEqual({
-              fruits: ['apple', 'banana'],
-              vegetables: ['carrot'],
-            });
-
-            done();
-          });
-        });
-      });
+    let items = await readFromSyncStorage('fruits');
+    expect(items).toEqual({
+      fruits: undefined,
     });
+
+    // 2nd, store 'fruits' and 'vegetables'
+    await writeToSyncStorage({ fruits: ['apple', 'banana'], vegetables: ['carrot'] });
+
+    // 3rd, then we refetch 'fruits'
+    items = await readFromSyncStorage('fruits');
+    expect(items).toEqual({
+      fruits: ['apple', 'banana'],
+    });
+
+    // 4th, read everything from storage
+    items = await readFromSyncStorage();
+    expect(items).toEqual({
+      fruits: ['apple', 'banana'],
+      vegetables: ['carrot'],
+    });
+
+    done();
   });
 
-  test('errors', done => {
-    writeToSyncStorage(1 as any).then(items => {
-      expect(items).toBeUndefined();
+  test('errors', async done => {
+    const items = await writeToSyncStorage(1 as any);
+    expect(items).toBeUndefined();
 
-      readFromSyncStorage(1 as any).catch(err => {
-        expect(err).toEqual(new Error('Wrong key given'));
-        done();
-      });
-    });
+    try {
+      await readFromSyncStorage(1 as any);
+    } catch (err) {
+      expect(err).toEqual(new Error('Wrong key given'));
+    }
+
+    done();
   });
 });
