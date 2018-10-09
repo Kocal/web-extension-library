@@ -2,6 +2,7 @@
   "extends": "./tsconfig.json",
   "exclude": [
     "src/**/*.test.ts",
+    "src/**/__fixtures__/",
     "node_modules"
   ]
 }
