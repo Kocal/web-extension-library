@@ -1,6 +1,6 @@
 {
   "name": "@kocal/web-extension-library",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "A set of functions used for easily write a web extension",
   "repository": "https://github.com/Kocal-Web-Extensions/library.git",
   "author": "Hugo Alliaume <kocal@live.fr>",
@@ -12,12 +12,12 @@
   "typings": "dist/types/index.d.ts",
   "scripts": {
     "prepublishOnly": "yarn lint && yarn test && yarn build",
-    "release": "standard-version",
     "build": "rimraf dist && tsc --build tsconfig.build.json",
     "lint": "tslint --project tsconfig.json",
     "test": "jest",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "semantic-release": "semantic-release"
   },
   "husky": {
     "hooks": {
@@ -32,6 +32,7 @@
     ]
   },
   "devDependencies": {
+    "@kocal/semantic-release-preset": "^1.1.0",
     "@types/jest": "^23.3.2",
     "@types/node": "^10.9.4",
     "@types/qs": "^6.5.1",
@@ -42,7 +43,7 @@
     "lint-staged": "^8.0.0-beta.1",
     "prettier": "^1.14.2",
     "rimraf": "^2.6.2",
-    "standard-version": "^4.4.0",
+    "semantic-release": "^15.12.3",
     "ts-jest": "^23.1.4",
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.11.0",
