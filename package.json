@@ -31,6 +31,9 @@
       "git add"
     ]
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@kocal/semantic-release-preset": "^1.1.0",
     "@types/jest": "^23.3.2",

@@ -3,7 +3,8 @@ dist: trusty
 
 language: node_js
 node_js:
-  - "node"
+  - 8
+  - node
 
 cache:
   yarn: true
@@ -19,3 +20,11 @@ script:
   - yarn lint
   - yarn build
   - yarn test -i && codecov
+
+jobs:
+  include:
+    - stage: Release
+      if: branch = master AND type = push
+      node_js: node
+      script: yarn semantic-release
+
