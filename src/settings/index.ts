@@ -8,12 +8,16 @@ export interface InterfaceSettings {
 }
 
 export interface InterfaceSettingsItem {
-  type: 'boolean';
+  type: string;
   label: string;
   help?: string;
-  defaultValue?: any;
-  value?: any;
   children?: InterfaceSettings;
+  // for any type
+  value?: any;
+  defaultValue?: any;
+  // when type is `range'
+  min?: number;
+  max?: number;
 }
 
 export const getSettings = (): InterfaceSettings => _settings;
