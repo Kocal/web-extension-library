@@ -6,20 +6,20 @@ Methods for the [New Twitch API](https://dev.twitch.tv/docs/api/).
 You first need to create a [Twitch application](https://glass.twitch.tv/console/apps)
 :::
 
-## Register API keys
+## Register API key
+
+You need to register an API key to use the Twitch API.
 
 ```typescript
-import { registerTwitchApiKeys } from '@kocal/web-extension-library';
+import { registerTwitchApiKey } from '@kocal/web-extension-library';
 
-// If you are building an extension for a lot of users (~4000 or more),
-// it's advised to create multiple Twitch application to prevent API calls limitations
-registerTwitchApiKeys(['<your api key>', '<your second api key if needed>']);
+registerTwitchApiKey('<your api key>');
 ```
 
-## Picking an API key
+## Get the API key
 
-Returns _randomly_ an API key.
-It throws an error if you forgot to call [`registerTwitchApiKeys`](#register-api-keys).
+Returns the API key.
+It throws an error if you forgot to call [`registerTwitchApiKey`](#register-api-keys).
 
 :::warning
 Normally you don't have to call this method by yourself, 
@@ -27,9 +27,9 @@ this is an internal method used by [`getTwitchGame`](#getting-information-on-a-g
 :::
 
 ```typescript
-import { pickTwitchApiKey } from '@kocal/web-extension-library';
+import { getTwitchApiKey } from '@kocal/web-extension-library';
 
-pickTwitchApiKey();
+getTwitchApiKey();
 ```
 
 ## Getting information on a Game
