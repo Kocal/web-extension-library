@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { stringify as stringifyQueryParameters } from 'qs';
-import { getTwitchGame, pickTwitchApiKey } from '.';
+import { getTwitchGame, getTwitchApiKey } from '.';
 import { Game } from './getTwitchGame';
 
 export interface Stream {
@@ -24,7 +24,7 @@ type Payload = { onlineStreams: Stream[]; offlineStreams: number[] };
 export const getTwitchLiveStreams = (usersId: number[]): Promise<Payload> => {
   const url = `https://api.twitch.tv/helix/streams?${stringifyQueryParameters({ user_id: usersId })}`;
   const config = {
-    headers: { 'Client-ID': pickTwitchApiKey() },
+    headers: { 'Client-ID': getTwitchApiKey() },
   };
 
   return new Promise<Payload>(async resolve => {
