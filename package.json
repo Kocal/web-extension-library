@@ -39,6 +39,7 @@
     "@types/node": "^10.17.24",
     "@types/qs": "^6.9.3",
     "axios-mock-adapter": "^1.18.1",
+    "codecov": "^3.7.0",
     "husky": "^4.2.5",
     "jest": "^26.0.1",
     "jest-webextension-mock": "^3.5.4",
