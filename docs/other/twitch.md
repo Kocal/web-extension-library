@@ -47,7 +47,7 @@ You need to update your extension permissions, edit your `manifest.json` with:
 You also need to configure the `redirect_uri` in your Twitch Application.
 :::
 
-Twitch now requires to pass a OAuth token for each requests.
+Twitch now requires to [be authenticated](https://dev.twitch.tv/docs/authentication) for each requests.
 
 The function `askTwitchAccessToken` will take cares of: 
 - trigger the web auth flow to loggin on Twitch
