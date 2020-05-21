@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { askTwitchAccessToken, getTwitchAccessToken, getTwitchApiKey, registerTwitchAccessToken } from '.';
+import { isTwitchApiOAuthError } from './authorization';
 
 export interface Game {
   id: string;
@@ -20,14 +21,11 @@ const sendRequest = async (id: string): Promise<Game | null> => {
   try {
     response = await axios.get(`https://api.twitch.tv/helix/games`, config);
   } catch (error) {
-    if (error.response) {
-      if (error.response.status === 401 && error.response.data.message === 'Invalid OAuth token') {
-        registerTwitchAccessToken(await askTwitchAccessToken(true));
-        return sendRequest(id);
-      }
-    } else {
-      throw error;
+    if (isTwitchApiOAuthError(error)) {
+      registerTwitchAccessToken(await askTwitchAccessToken(true));
+      return sendRequest(id);
     }
+    throw error;
   }
 
   return Promise.resolve(response.data.data[0] || null);

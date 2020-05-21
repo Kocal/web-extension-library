@@ -7,6 +7,7 @@ import {
   askTwitchAccessToken,
   registerTwitchAccessToken,
 } from '.';
+import { isTwitchApiOAuthError } from './authorization';
 import { Game } from './getTwitchGame';
 
 export interface Stream {
@@ -38,14 +39,11 @@ export const getTwitchLiveStreams = (usersId: number[]): Promise<Payload> => {
     try {
       response = await axios.get(url, config);
     } catch (error) {
-      if (error.response) {
-        if (error.response.status === 401 && error.response.data.message === 'Invalid OAuth token') {
-          registerTwitchAccessToken(await askTwitchAccessToken(true));
-          return getTwitchLiveStreams(usersId).then(resolve);
-        }
-      } else {
-        throw error;
+      if (isTwitchApiOAuthError(error)) {
+        registerTwitchAccessToken(await askTwitchAccessToken(true));
+        return getTwitchLiveStreams(usersId).then(resolve);
       }
+      throw error;
     }
 
     const streams: Stream[] = response.data.data;
