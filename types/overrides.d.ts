@@ -15,3 +15,8 @@ declare namespace browser.tabs {
     windowId?: number;
   };
 }
+
+declare namespace browser.identity {
+  function getRedirectURL(): string;
+  function getRedirectURL(path: string): string;
+}

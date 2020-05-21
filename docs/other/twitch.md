@@ -16,20 +16,57 @@ import { registerTwitchApiKey } from '@kocal/web-extension-library';
 registerTwitchApiKey('<your api key>');
 ```
 
-## Get the API key
-
-Returns the API key.
-It throws an error if you forgot to call [`registerTwitchApiKey`](#register-api-keys).
+### Access the API key
 
 :::warning
 Normally you don't have to call this method by yourself, 
 this is an internal method used by [`getTwitchGame`](#getting-information-on-a-game) or [`getTwitchLiveStreams`](#getting-live-streams).
 :::
 
+Returns the API key.
+It throws an error if you forgot to call [`registerTwitchApiKey`](#register-api-keys).
+
+
 ```typescript
 import { getTwitchApiKey } from '@kocal/web-extension-library';
 
 getTwitchApiKey();
+```
+
+## OAuth
+
+:::tip
+You need to update your extension permissions, edit your `manifest.json` with:
+
+```json
+{
+  "permissions": ["identity"]
+}
+```
+
+You also need to configure the `redirect_uri` in your Twitch Application.
+:::
+
+Twitch now requires to [be authenticated](https://dev.twitch.tv/docs/authentication) for each requests.
+
+The function `askTwitchAccessToken` will take cares of: 
+- trigger the web auth flow to loggin on Twitch
+- validate the access token
+- handle expiration
+- read and write to sync storage, to prevent unecessary Twitch API calls
+
+```js
+import { askTwitchAccessToken } from '@kocal/web-extension-library';
+
+const accessToken = await askTwitchAccessToken();
+```
+
+Then you need to register it back to the library:
+
+```js
+import { registerTwitchAccessToken } from '@kocal/web-extension-library';
+
+registerTwitchAccessToken(accessToken); 
 ```
 
 ## Getting information on a Game
