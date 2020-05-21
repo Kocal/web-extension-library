@@ -1,6 +1,12 @@
 import axios from 'axios';
 import { stringify as stringifyQueryParameters } from 'qs';
-import { getTwitchGame, getTwitchApiKey, getTwitchAccessToken } from '.';
+import {
+  getTwitchGame,
+  getTwitchApiKey,
+  getTwitchAccessToken,
+  askTwitchAccessToken,
+  registerTwitchAccessToken,
+} from '.';
 import { Game } from './getTwitchGame';
 
 export interface Stream {
@@ -28,7 +34,20 @@ export const getTwitchLiveStreams = (usersId: number[]): Promise<Payload> => {
   };
 
   return new Promise<Payload>(async (resolve) => {
-    const response = await axios.get(url, config);
+    let response;
+    try {
+      response = await axios.get(url, config);
+    } catch (error) {
+      if (error.response) {
+        if (error.response.status === 401 && error.response.data.message === 'Invalid OAuth token') {
+          registerTwitchAccessToken(await askTwitchAccessToken(true));
+          return getTwitchLiveStreams(usersId).then(resolve);
+        }
+      } else {
+        throw error;
+      }
+    }
+
     const streams: Stream[] = response.data.data;
 
     const onlineStreams = streams.filter((stream) => usersId.includes(Number(stream.user_id)));
