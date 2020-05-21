@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getTwitchApiKey } from '.';
+import { getTwitchAccessToken, getTwitchApiKey } from '.';
 
 export interface Game {
   id: string;
@@ -12,7 +12,7 @@ const writeToCache = (game: Game): void => localStorage.setItem(`_twitch_game_${
 
 const sendRequest = async (id: string): Promise<Game | null> => {
   const config = {
-    headers: { 'Client-ID': getTwitchApiKey() },
+    headers: { 'Client-ID': getTwitchApiKey(), Authorization: `Bearer ${getTwitchAccessToken()}` },
     params: { id },
   };
 

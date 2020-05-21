@@ -1,9 +1,10 @@
 import axios from 'axios';
 import axiosMockAdapter from 'axios-mock-adapter';
 import { stringify as stringifyQueryParameters } from 'qs';
-import { getTwitchGame, registerTwitchApiKey } from '.';
+import { getTwitchGame, registerTwitchAccessToken, registerTwitchApiKey } from '.';
 
 registerTwitchApiKey('82ehz5kq1xe2nha3b4z9qjnjn4tim8t');
+registerTwitchAccessToken('abc');
 
 describe('getTwitchGame', () => {
   const spySetItem = jest.spyOn(Storage.prototype, 'setItem');

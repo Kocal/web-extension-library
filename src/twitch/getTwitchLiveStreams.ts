@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { stringify as stringifyQueryParameters } from 'qs';
-import { getTwitchGame, getTwitchApiKey } from '.';
+import { getTwitchGame, getTwitchApiKey, getTwitchAccessToken } from '.';
 import { Game } from './getTwitchGame';
 
 export interface Stream {
@@ -24,17 +24,17 @@ type Payload = { onlineStreams: Stream[]; offlineStreams: number[] };
 export const getTwitchLiveStreams = (usersId: number[]): Promise<Payload> => {
   const url = `https://api.twitch.tv/helix/streams?${stringifyQueryParameters({ user_id: usersId })}`;
   const config = {
-    headers: { 'Client-ID': getTwitchApiKey() },
+    headers: { 'Client-ID': getTwitchApiKey(), Authorization: `Bearer ${getTwitchAccessToken()}` },
   };
 
-  return new Promise<Payload>(async resolve => {
+  return new Promise<Payload>(async (resolve) => {
     const response = await axios.get(url, config);
     const streams: Stream[] = response.data.data;
 
-    const onlineStreams = streams.filter(stream => usersId.includes(Number(stream.user_id)));
-    const offlineStreams = usersId.filter(userId => streams.every(stream => Number(stream.user_id) !== userId));
+    const onlineStreams = streams.filter((stream) => usersId.includes(Number(stream.user_id)));
+    const offlineStreams = usersId.filter((userId) => streams.every((stream) => Number(stream.user_id) !== userId));
 
-    const promises = onlineStreams.map(async stream => {
+    const promises = onlineStreams.map(async (stream) => {
       stream.game = await getTwitchGame(stream.game_id);
     });
 
