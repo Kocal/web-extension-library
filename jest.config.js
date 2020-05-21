@@ -3,7 +3,8 @@
 
 module.exports = {
   setupFiles: [
-    'jest-webextension-mock'
+    'jest-webextension-mock',
+    'jest-date-mock'
   ],
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
