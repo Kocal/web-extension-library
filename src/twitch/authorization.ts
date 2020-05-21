@@ -46,11 +46,13 @@ async function askTwitchAuthorization(clientId: string, interactive: boolean = f
 }
 
 async function validateAccessToken(accessToken: string): Promise<any> {
-  return axios.get(`${oAuthUrl}/validate`, {
+  const response = await axios.get(`${oAuthUrl}/validate`, {
     headers: {
       Authorization: `OAuth ${accessToken}`,
     },
   });
+
+  return response.data;
 }
 
 export async function askTwitchAccessToken(force: boolean = false) {
