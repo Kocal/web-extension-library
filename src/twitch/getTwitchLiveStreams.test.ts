@@ -1,9 +1,10 @@
 import axios from 'axios';
 import axiosMockAdapter from 'axios-mock-adapter';
 import { stringify as stringifyQueryParameters } from 'qs';
-import { getTwitchLiveStreams, registerTwitchApiKeys } from '.';
+import { getTwitchLiveStreams, registerTwitchAccessToken, registerTwitchApiKey } from '.';
 
-registerTwitchApiKeys(['82ehz5kq1xe2nha3b4z9qjnjn4tim8t']);
+registerTwitchApiKey('82ehz5kq1xe2nha3b4z9qjnjn4tim8t');
+registerTwitchAccessToken('abc');
 
 const solaryUserId = 174955366;
 const solaryFortniteUserId = 198506129;
@@ -14,11 +15,21 @@ axiosMock
     `https://api.twitch.tv/helix/streams?${stringifyQueryParameters({ user_id: [solaryUserId, solaryFortniteUserId] })}`
   )
   .replyOnce(200, require('./__fixtures__/getTwitchliveStreams/response.json'))
+  .onGet(`https://api.twitch.tv/helix/games`, { params: { id: '21779' } })
+  .reply(200, {
+    data: [
+      {
+        id: '21779',
+        name: 'League of Legends',
+        box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends-{width}x{height}.jpg',
+      },
+    ],
+  })
   .onAny()
   .passThrough();
 
 describe('getTwitchLiveStreams', () => {
-  it('Solary should be online, Solary Fortnite should be offline', async done => {
+  it('Solary should be online, Solary Fortnite should be offline', async (done) => {
     const { onlineStreams, offlineStreams } = await getTwitchLiveStreams([solaryUserId, solaryFortniteUserId]);
 
     expect(offlineStreams).toEqual([198506129]);

@@ -6,30 +6,67 @@ Methods for the [New Twitch API](https://dev.twitch.tv/docs/api/).
 You first need to create a [Twitch application](https://glass.twitch.tv/console/apps)
 :::
 
-## Register API keys
+## Register API key
+
+You need to register an API key to use the Twitch API.
 
 ```typescript
-import { registerTwitchApiKeys } from '@kocal/web-extension-library';
+import { registerTwitchApiKey } from '@kocal/web-extension-library';
 
-// If you are building an extension for a lot of users (~4000 or more),
-// it's advised to create multiple Twitch application to prevent API calls limitations
-registerTwitchApiKeys(['<your api key>', '<your second api key if needed>']);
+registerTwitchApiKey('<your api key>');
 ```
 
-## Picking an API key
-
-Returns _randomly_ an API key.
-It throws an error if you forgot to call [`registerTwitchApiKeys`](#register-api-keys).
+### Access the API key
 
 :::warning
 Normally you don't have to call this method by yourself, 
 this is an internal method used by [`getTwitchGame`](#getting-information-on-a-game) or [`getTwitchLiveStreams`](#getting-live-streams).
 :::
 
-```typescript
-import { pickTwitchApiKey } from '@kocal/web-extension-library';
+Returns the API key.
+It throws an error if you forgot to call [`registerTwitchApiKey`](#register-api-keys).
 
-pickTwitchApiKey();
+
+```typescript
+import { getTwitchApiKey } from '@kocal/web-extension-library';
+
+getTwitchApiKey();
+```
+
+## OAuth
+
+:::tip
+You need to update your extension permissions, edit your `manifest.json` with:
+
+```json
+{
+  "permissions": ["identity"]
+}
+```
+
+You also need to configure the `redirect_uri` in your Twitch Application.
+:::
+
+Twitch now requires to [be authenticated](https://dev.twitch.tv/docs/authentication) for each requests.
+
+The function `askTwitchAccessToken` will take cares of: 
+- trigger the web auth flow to loggin on Twitch
+- validate the access token
+- handle expiration
+- read and write to sync storage, to prevent unecessary Twitch API calls
+
+```js
+import { askTwitchAccessToken } from '@kocal/web-extension-library';
+
+const accessToken = await askTwitchAccessToken();
+```
+
+Then you need to register it back to the library:
+
+```js
+import { registerTwitchAccessToken } from '@kocal/web-extension-library';
+
+registerTwitchAccessToken(accessToken); 
 ```
 
 ## Getting information on a Game
