@@ -1,6 +1,7 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import * as qs from 'qs';
 import { getTwitchApiKey, readFromSyncStorage, writeToSyncStorage } from '..';
+import { isAxiosError } from '../utils';
 
 const oAuthUrl = 'https://id.twitch.tv/oauth2';
 
@@ -81,4 +82,19 @@ export async function askTwitchAccessToken(force: boolean = false) {
   }
 
   return accessToken;
+}
+
+export function isTwitchApiOAuthError(error: Error | AxiosError) {
+  if (isAxiosError(error)) {
+    if (
+      error.response.status === 401 &&
+      ['Invalid OAuth token', 'Client ID and OAuth token do not match'].includes(error.response.data.message)
+    ) {
+      return true;
+    }
+
+    return false;
+  }
+
+  return false;
 }
