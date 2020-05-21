@@ -61,7 +61,7 @@ export async function askTwitchAccessToken(force: boolean = false) {
 
   const isExpired =
     twitchAuthorization && twitchAuthorization.expirationTimestamp
-      ? new Date(twitchAuthorization.expirationTimestamp) <= new Date()
+      ? twitchAuthorization.expires_in !== 0 && new Date(twitchAuthorization.expirationTimestamp) <= new Date()
       : false;
 
   if (force || accessToken === null || isExpired) {

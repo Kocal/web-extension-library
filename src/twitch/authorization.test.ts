@@ -82,6 +82,8 @@ describe('Twitch Authorization', () => {
   });
 
   test('Renew if expired', async () => {
+    const expiresIn = 1; // 1 sec
+
     advanceDateTo(1590021266683);
 
     axiosMock.onGet(`https://id.twitch.tv/oauth2/validate`).reply(200, {
@@ -99,7 +101,7 @@ describe('Twitch Authorization', () => {
         accessToken: 'abc',
         client_id: 'def',
         expirationTimestamp: new Date().getTime(),
-        expires_in: 0,
+        expires_in: expiresIn,
         login: 'thekocal',
         scopes: [],
         user_id: '11111111',
@@ -108,6 +110,7 @@ describe('Twitch Authorization', () => {
     // @ts-ignore
     browser.storage.sync.set.mockClear();
 
+    advanceDateBy(expiresIn * 2 * 1000);
     const accessToken = await askTwitchAccessToken();
 
     expect(browser.storage.sync.get).toHaveBeenNthCalledWith(1, ['twitchAuthorization']);
